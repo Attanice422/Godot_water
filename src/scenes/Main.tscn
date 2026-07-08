@@ -1,0 +1,134 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwk8m7x3a4b5c"]
+
+[ext_resource type="Script" uid="uid://bg5ucopoq7b4m" path="res://scripts/Main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://6argkyh15ipr" path="res://scripts/GridManager.gd" id="2_grid"]
+[ext_resource type="Script" uid="uid://bqn7nbt1laled" path="res://scripts/HUD.gd" id="3_hud"]
+[ext_resource type="Script" uid="uid://dymyish0rnucr" path="res://scripts/BlockPlacement.gd" id="4_block"]
+[ext_resource type="Script" uid="uid://di6cawyse5j80" path="res://scripts/WaterSimulator.gd" id="5_water"]
+[ext_resource type="Script" uid="uid://cnp2l7eycxv46" path="res://scripts/TaskAreaManager.gd" id="6_task"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 12, 10)
+projection = 1
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0, -0.5, -0.353553, 0.707107, -0.612372, 0.353553, 0.707107, 0.612372, 0, 10, 0)
+shadow_enabled = true
+
+[node name="BoardRoot" type="Node3D" parent="."]
+
+[node name="WaterRoot" type="Node3D" parent="."]
+
+[node name="BlockRoot" type="Node3D" parent="."]
+
+[node name="MarkerRoot" type="Node3D" parent="."]
+
+[node name="GridManager" type="Node3D" parent="."]
+script = ExtResource("2_grid")
+
+[node name="BlockPlacement" type="Node3D" parent="."]
+script = ExtResource("4_block")
+
+[node name="WaterSimulator" type="Node3D" parent="."]
+script = ExtResource("5_water")
+
+[node name="TaskAreaManager" type="Node3D" parent="."]
+script = ExtResource("6_task")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUDRoot" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_hud")
+
+[node name="TopPanel" type="Panel" parent="UI/HUDRoot"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 120.0
+
+[node name="LevelNameLabel" type="Label" parent="UI/HUDRoot/TopPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 280.0
+offset_bottom = 30.0
+text = "关卡名："
+
+[node name="StateLabel" type="Label" parent="UI/HUDRoot/TopPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 280.0
+offset_bottom = 55.0
+text = "状态："
+
+[node name="TimeLabel" type="Label" parent="UI/HUDRoot/TopPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 280.0
+offset_bottom = 80.0
+text = "用时：0.0s"
+
+[node name="WallCountLabel" type="Label" parent="UI/HUDRoot/TopPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 85.0
+offset_right = 280.0
+offset_bottom = 105.0
+text = "石墙："
+
+[node name="ActionButton" type="Button" parent="UI/HUDRoot"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 510.0
+offset_right = 790.0
+offset_bottom = 550.0
+text = "开始"
+
+[node name="ResultPanel" type="Panel" parent="UI/HUDRoot"]
+visible = false
+layout_mode = 0
+offset_left = 290.0
+offset_top = 200.0
+offset_right = 510.0
+offset_bottom = 350.0
+
+[node name="ResultTitleLabel" type="Label" parent="UI/HUDRoot/ResultPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 210.0
+offset_bottom = 50.0
+text = "结果"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="UI/HUDRoot/ResultPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = 150.0
+offset_bottom = 110.0
+text = "重试"
+
+[node name="NextButton" type="Button" parent="UI/HUDRoot/ResultPanel"]
+visible = false
+layout_mode = 0
+offset_left = 170.0
+offset_top = 80.0
+offset_right = 270.0
+offset_bottom = 110.0
+text = "下一关"
