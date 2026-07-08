@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf3cr57t1lcl8"]
+
+[ext_resource type="Script" uid="uid://ccmukp0btat0m" path="res://ui/dialogs/failure_dialog.gd" id="1_failure_dialog"]
+[ext_resource type="PackedScene" uid="uid://s2nhkh0838bm" path="res://ui/controls/retry_button.tscn" id="2_retry_button"]
+[ext_resource type="PackedScene" uid="uid://bx5stjk0861qm" path="res://ui/controls/hint_button.tscn" id="3_hint_button"]
+[ext_resource type="Texture2D" path="res://assets/art/ui/buttons/dialog_background.png" id="4_dialog_background"]
+
+[node name="FailureDialog" type="Window"]
+title = "失败"
+initial_position = 1
+size = Vector2i(480, 302)
+script = ExtResource("1_failure_dialog")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_dialog_background")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Content" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 60.0
+offset_right = -32.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="TitleLabel" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "村子被淹了"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RetryButton" parent="Content/ButtonRow" instance=ExtResource("2_retry_button")]
+layout_mode = 2
+
+[node name="HintButton" parent="Content/ButtonRow" instance=ExtResource("3_hint_button")]
+custom_minimum_size = Vector2(180, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24

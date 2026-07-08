@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3h3lw1eyca4q"]
+
+[ext_resource type="Texture2D" uid="uid://dgkhfse180quy" path="res://assets/art/ui/buttons/start_button.png" id="1_g5770"]
+[ext_resource type="Script" uid="uid://dp5ju1pvpefqq" path="res://ui/controls/start_reset_button.gd" id="1_start_reset"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4ftf"]
+texture = ExtResource("1_g5770")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw3mx"]
+texture = ExtResource("1_g5770")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81yj0"]
+texture = ExtResource("1_g5770")
+
+[node name="StartResetButton" type="Button"]
+custom_minimum_size = Vector2(144, 64)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -76.0
+offset_right = -24.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_u4ftf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bw3mx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_81yj0")
+text = "开始"
+script = ExtResource("1_start_reset")
