@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://c64cr2aburstt"]
+
+[ext_resource type="Texture2D" uid="uid://dh5fkevajweh2" path="res://assets/art/ui/buttons/item_button.png" id="1_item_button"]
+[ext_resource type="Texture2D" uid="uid://somiilu3uw7k" path="res://icon.svg" id="2_placeholder_icon"]
+
+[node name="BottomToolbar" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="Content" type="HBoxContainer" parent="Background/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ResourceSlot" type="HBoxContainer" parent="Background/Margin/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ResourceButton" type="TextureButton" parent="Background/Margin/Content/ResourceSlot"]
+custom_minimum_size = Vector2(62, 56)
+layout_mode = 2
+texture_normal = ExtResource("1_item_button")
+texture_pressed = ExtResource("1_item_button")
+texture_hover = ExtResource("1_item_button")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Icon" type="TextureRect" parent="Background/Margin/Content/ResourceSlot/ResourceButton"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 17.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_placeholder_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CountGroup" type="HBoxContainer" parent="Background/Margin/Content/ResourceSlot"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CountPrefixLabel" type="Label" parent="Background/Margin/Content/ResourceSlot/CountGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "X"
+vertical_alignment = 1
+
+[node name="CountValueLabel" type="Label" parent="Background/Margin/Content/ResourceSlot/CountGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "5"
+vertical_alignment = 1

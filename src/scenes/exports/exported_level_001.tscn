@@ -1,0 +1,532 @@
+[gd_scene load_steps=24 format=3 uid="uid://38h1x0nr3kgn"]
+
+[ext_resource type="Script" uid="uid://3mxmln4oj3u" path="res://scripts/exported_level_runtime.gd" id="1_1a8ye"]
+[ext_resource type="PackedScene" uid="uid://bf4nsyjdtpc17" path="res://assets/models/library/bookstore/Bookstore.fbx" id="2_mjhje"]
+[ext_resource type="PackedScene" uid="uid://clex4rqpsmrdk" path="res://assets/models/library/butcher/Butcher.fbx" id="3_x7kan"]
+[ext_resource type="PackedScene" uid="uid://bramnbk6tqvvs" path="res://assets/models/library/clothing/Clothing_Store.fbx" id="4_055qf"]
+[ext_resource type="PackedScene" uid="uid://by5odadelb8a5" path="res://assets/models/library/gazeebo/Gazeebo.fbx" id="5_iqr0i"]
+[ext_resource type="PackedScene" uid="uid://b8c5s8n40ngfu" path="res://assets/models/library/horse_room/Horse_room.fbx" id="6_6hrxc"]
+[ext_resource type="PackedScene" uid="uid://38k72qg14th4" path="res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx" id="7_xxpg2"]
+[ext_resource type="PackedScene" uid="uid://ccbx7a344cds6" path="res://assets/models/library/LowPoly Environment Pack/Bush_1.fbx" id="8_3qclm"]
+[ext_resource type="PackedScene" uid="uid://c2r1lspmjp5ex" path="res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Corn_2.fbx" id="9_booch"]
+[ext_resource type="PackedScene" uid="uid://dksqi6x44f1sy" path="res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx" id="10_dycnt"]
+[ext_resource type="PackedScene" uid="uid://g51c742c1jjg" path="res://assets/models/library/LowPoly Environment Pack/Terrain_2.fbx" id="11_1e8u0"]
+[ext_resource type="PackedScene" uid="uid://cw3jc1o8r6cxi" path="res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Willow_Dead_5.fbx" id="12_wxlxu"]
+[ext_resource type="PackedScene" uid="uid://6vg2cv3gf6l2" path="res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/PalmTree_4.fbx" id="13_yeg84"]
+[ext_resource type="PackedScene" uid="uid://b7s4vkv6vmn0l" path="res://assets/models/library/LowPoly Environment Pack/Plant_7.fbx" id="14_hmemd"]
+[ext_resource type="PackedScene" uid="uid://cd8ui2wv22qdd" path="res://assets/models/library/LowPoly Environment Pack/Plant_1.fbx" id="15_bx62q"]
+[ext_resource type="PackedScene" uid="uid://d1t8wqujqv3c6" path="res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/BirchTree_5.fbx" id="16_tqjxi"]
+[ext_resource type="PackedScene" uid="uid://dbtp2ddxexj1n" path="res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/CommonTree_4.fbx" id="17_cpnxj"]
+[ext_resource type="PackedScene" uid="uid://dq3p7wjklou14" path="res://assets/models/library/LowPoly Environment Pack/Mounting_1.fbx" id="18_1hk0d"]
+[ext_resource type="PackedScene" uid="uid://dcnr8s7scwv6k" path="res://assets/models/library/LowPoly Environment Pack/Mounting_3.fbx" id="19_0yuf4"]
+[ext_resource type="PackedScene" uid="uid://8gror57qf131" path="res://assets/models/library/LowPoly Environment Pack/Mounting_2.fbx" id="20_assom"]
+
+[sub_resource type="Environment" id="Environment_8mqgm"]
+background_mode = 1
+background_color = Color(0.75, 0.86, 0.92, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.68, 0.74, 0.78, 1)
+ambient_light_energy = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htejw"]
+resource_local_to_scene = true
+albedo_color = Color(0.36, 0.48, 0.36, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_binfo"]
+size = Vector3(200, 0.08, 200)
+
+[node name="ExportedLevel" type="Node3D"]
+script = ExtResource("1_1a8ye")
+metadata/editor_camera_distance = 83.0
+metadata/editor_camera_target = Vector3(-11.5266, 0, -4.78553)
+metadata/editor_camera_pitch = -1.00576
+metadata/editor_camera_yaw = 0.809398
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.819152, -0.469846, 0.32899, 0, 0.573576, 0.819152, -0.573576, -0.67101, 0.469846, 0, 0, 0)
+light_energy = 2.8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8mqgm")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
+material_override = SubResource("StandardMaterial3D_htejw")
+mesh = SubResource("BoxMesh_binfo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.689934, 0.611359, -0.387596, 0, 0.535448, 0.844568, 0.723872, 0.582696, -0.369424, -43.697, 70.0992, -35.4477)
+current = true
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Object_assets_models_library_bookstore_bookstore_0" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.2193, 1.57776, 65.4374)
+metadata/asset_id = "assets_models_library_bookstore_bookstore"
+metadata/asset_path = "res://assets/models/library/bookstore/Bookstore.fbx"
+metadata/asset_category = "建筑"
+
+[node name="Bookstore" parent="Objects/Object_assets_models_library_bookstore_bookstore_0" instance=ExtResource("2_mjhje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0155002, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_butcher_butcher_1" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.854, 1.59998, 46.847)
+metadata/asset_id = "assets_models_library_butcher_butcher"
+metadata/asset_path = "res://assets/models/library/butcher/Butcher.fbx"
+metadata/asset_category = "建筑"
+
+[node name="Butcher" parent="Objects/Object_assets_models_library_butcher_butcher_1" instance=ExtResource("3_x7kan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00464365, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_clothing_clothing_store_2" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.3077, 1.68887, 88.2413)
+metadata/asset_id = "assets_models_library_clothing_clothing_store"
+metadata/asset_path = "res://assets/models/library/clothing/Clothing_Store.fbx"
+metadata/asset_category = "建筑"
+
+[node name="Clothing_Store" parent="Objects/Object_assets_models_library_clothing_clothing_store_2" instance=ExtResource("4_055qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0150579, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_gazeebo_gazeebo_3" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6886, 1.73332, 83.0145)
+metadata/asset_id = "assets_models_library_gazeebo_gazeebo"
+metadata/asset_path = "res://assets/models/library/gazeebo/Gazeebo.fbx"
+metadata/asset_category = "建筑"
+
+[node name="Gazeebo" parent="Objects/Object_assets_models_library_gazeebo_gazeebo_3" instance=ExtResource("5_iqr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00844502, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_horse_room_horse_room_4" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.1175, 1.79998, 58.9626)
+metadata/asset_id = "assets_models_library_horse_room_horse_room"
+metadata/asset_path = "res://assets/models/library/horse_room/Horse_room.fbx"
+metadata/asset_category = "建筑"
+
+[node name="Horse_room" parent="Objects/Object_assets_models_library_horse_room_horse_room_4" instance=ExtResource("6_6hrxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23391, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_5" type="Node3D" parent="Objects"]
+transform = Transform3D(1.05333, 0, 0, 0, 1.05333, 0, 0, 0, 1.05333, -68.7232, 0.11111, 90.3592)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_5" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_6" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.3365, 0, 90.3427)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_6" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_7" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8705, 0, 72.0944)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_7" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_8" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2724, 0, 53.9765)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_8" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_9" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2345, 0, 37.2215)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_9" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_10" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7834, 0, 83.1241)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_10" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_11" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2992, 0, 48.0635)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_11" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_12" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4571, 0, 57.5091)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_12" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_13" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3652, 0, 37.3962)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_13" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_14" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.3695, 0, 90.097)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_14" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_15" type="Node3D" parent="Objects"]
+transform = Transform3D(1.05333, 0, 0, 0, 1.05333, 0, 0, 0, 1.05333, -67.54, 0.11111, 38.7674)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_15" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_16" type="Node3D" parent="Objects"]
+transform = Transform3D(1.05333, 0, 0, 0, 1.05333, 0, 0, 0, 1.05333, -68.4735, 0.11111, 77.8799)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_16" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_environment_1_17" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.4878, 0, 65.3226)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_environment_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Environment_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Environment_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_environment_1_17" instance=ExtResource("7_xxpg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870545, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_bush_1_18" type="Node3D" parent="Objects"]
+transform = Transform3D(1.24, 0, 0, 0, 1.24, 0, 0, 0, 1.24, -45.9166, 1.73334, 45.3393)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_bush_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Bush_1.fbx"
+metadata/asset_category = "植物"
+
+[node name="Bush_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_bush_1_18" instance=ExtResource("8_3qclm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.74219e-08, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_bush_1_19" type="Node3D" parent="Objects"]
+transform = Transform3D(1.24, 0, 0, 0, 1.24, 0, 0, 0, 1.24, -47.5063, 1.73334, 42.7978)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_bush_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Bush_1.fbx"
+metadata/asset_category = "植物"
+
+[node name="Bush_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_bush_1_19" instance=ExtResource("8_3qclm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.74219e-08, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_corn_2_20" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -44.4274, 0.955556, 43.3246)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_corn_2"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Corn_2.fbx"
+metadata/asset_category = "植物"
+
+[node name="Corn_2" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_corn_2_20" instance=ExtResource("9_booch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00501205, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_21" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 57.7046, 0, 67.0962)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_21" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_terrain_2_22" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4437, 0, 72.0806)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_terrain_2"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Terrain_2.fbx"
+metadata/asset_category = "地形"
+
+[node name="Terrain_2" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_terrain_2_22" instance=ExtResource("11_1e8u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0542967, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_terrain_2_23" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2264, 0, 90.8326)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_terrain_2"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Terrain_2.fbx"
+metadata/asset_category = "地形"
+
+[node name="Terrain_2" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_terrain_2_23" instance=ExtResource("11_1e8u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0542967, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_terrain_2_24" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1315, 0, 91.44)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_terrain_2"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Terrain_2.fbx"
+metadata/asset_category = "地形"
+
+[node name="Terrain_2" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_terrain_2_24" instance=ExtResource("11_1e8u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0542967, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_terrain_2_25" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.1657, 0, 72.3222)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_terrain_2"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Terrain_2.fbx"
+metadata/asset_category = "地形"
+
+[node name="Terrain_2" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_terrain_2_25" instance=ExtResource("11_1e8u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0542967, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_26" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 31.5508, 0, 72.0223)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_26" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_27" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 52.8118, 0, 66.4567)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_27" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_28" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 53.8995, 0, 90.3144)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_28" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_29" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 53.8358, 0, 85.5564)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_29" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_30" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 47.8519, 0, 87.9288)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_30" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_31" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34.5852, 0, 66.8459)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_31" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_32" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 50.4186, 0, 73.6656)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_32" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_33" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33.1319, 0, 89.7535)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_33" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_34" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 37.6927, 0, 86.9939)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_34" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_35" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.2407, 0, 92.798)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_35" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_36" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 47.3419, 0, 72.6886)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_36" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_37" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 25.4059, 0, 73.4873)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Wheat.fbx"
+metadata/asset_category = "植物"
+
+[node name="Wheat" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_wheat_37" instance=ExtResource("10_dycnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000244108, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_willow_dead_5_38" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -36.1234, 0.755556, 95.8114)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_willow_dead_5"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/Willow_Dead_5.fbx"
+metadata/asset_category = "树木"
+
+[node name="Willow_Dead_5" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_willow_dead_5_38" instance=ExtResource("12_wxlxu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0079349, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_palmtree_4_39" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -32.0471, 0, 96.4461)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_palmtree_4"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/PalmTree_4.fbx"
+metadata/asset_category = "树木"
+
+[node name="PalmTree_4" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_palmtree_4_39" instance=ExtResource("13_yeg84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0016645, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_plant_7_40" type="Node3D" parent="Objects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -74.8553, 0, 97.8376)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_plant_7"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Plant_7.fbx"
+metadata/asset_category = "植物"
+
+[node name="Plant_7" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_plant_7_40" instance=ExtResource("14_hmemd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0190457, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_plant_1_41" type="Node3D" parent="Objects"]
+transform = Transform3D(2.08, 0, 0, 0, 2.08, 0, 0, 0, 2.08, -36.4791, 2.44442, 55.1194)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_plant_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Plant_1.fbx"
+metadata/asset_category = "植物"
+
+[node name="Plant_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_plant_1_41" instance=ExtResource("15_bx62q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0336231, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_birchtree_5_42" type="Node3D" parent="Objects"]
+transform = Transform3D(1.72964, 0, -0.770077, 0, 1.89332, 0, 0.770077, 0, 1.72964, 68.1832, 0, 70.5385)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_birchtree_5"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/BirchTree_5.fbx"
+metadata/asset_category = "树木"
+
+[node name="BirchTree_5" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_birchtree_5_42" instance=ExtResource("16_tqjxi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0720278, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_commontree_4_43" type="Node3D" parent="Objects"]
+transform = Transform3D(1.7919, 0, -4.66788, 0, 5, 0, 4.66788, 0, 1.7919, 10.7868, 0, 90.3774)
+metadata/asset_id = "assets_models_library_ultimate_nature_pack_by_quaternius_fbx_commontree_4"
+metadata/asset_path = "res://assets/models/library/Ultimate Nature Pack by Quaternius/FBX/CommonTree_4.fbx"
+metadata/asset_category = "树木"
+
+[node name="CommonTree_4" parent="Objects/Object_assets_models_library_ultimate_nature_pack_by_quaternius_fbx_commontree_4_43" instance=ExtResource("17_cpnxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109857, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_mounting_1_44" type="Node3D" parent="Objects"]
+transform = Transform3D(1.56186, 0, 3.508, 0, 3.83999, 0, -3.508, 0, 1.56186, 14.9501, 0, -9.03827)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_mounting_1"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Mounting_1.fbx"
+metadata/asset_category = "地形"
+
+[node name="Mounting_1" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_mounting_1_44" instance=ExtResource("18_1hk0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157248, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_mounting_3_45" type="Node3D" parent="Objects"]
+transform = Transform3D(0.0802717, 0, -1.53123, 0, 1.53333, 0, 1.53123, 0, 0.0802717, -81.8363, 0, 0.712109)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_mounting_3"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Mounting_3.fbx"
+metadata/asset_category = "地形"
+
+[node name="Mounting_3" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_mounting_3_45" instance=ExtResource("19_0yuf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357138, 0)
+metadata/export_keep_instance_clean = true
+
+[node name="Object_assets_models_library_lowpoly_environment_pack_mounting_2_46" type="Node3D" parent="Objects"]
+transform = Transform3D(-0.44828, 0, 3.18862, 0, 3.21998, 0, -3.18862, 0, -0.44828, 14.6027, 0, -65.8073)
+metadata/asset_id = "assets_models_library_lowpoly_environment_pack_mounting_2"
+metadata/asset_path = "res://assets/models/library/LowPoly Environment Pack/Mounting_2.fbx"
+metadata/asset_category = "地形"
+
+[node name="Mounting_2" parent="Objects/Object_assets_models_library_lowpoly_environment_pack_mounting_2_46" instance=ExtResource("20_assom")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318308, 0)
+metadata/export_keep_instance_clean = true

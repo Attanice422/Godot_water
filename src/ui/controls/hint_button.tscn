@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx5stjk0861qm"]
+
+[ext_resource type="Script" uid="uid://cv58gthv0eemm" path="res://ui/controls/hint_button.gd" id="1_hint_button"]
+
+[node name="HintButton" type="Button"]
+custom_minimum_size = Vector2(96, 48)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 18.0
+offset_right = -24.0
+offset_bottom = 66.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "提示"
+script = ExtResource("1_hint_button")

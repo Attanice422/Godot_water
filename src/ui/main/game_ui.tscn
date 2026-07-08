@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://lt3tcxtofgln"]
+
+[ext_resource type="Script" uid="uid://bqyltl2yvo5j" path="res://ui/main/game_ui.gd" id="1_game_ui"]
+[ext_resource type="PackedScene" uid="uid://btq5b3766unrc" path="res://ui/hud/top_hud.tscn" id="2_top_hud"]
+[ext_resource type="PackedScene" uid="uid://c64cr2aburstt" path="res://ui/toolbar/bottom_toolbar.tscn" id="3_bottom_toolbar"]
+[ext_resource type="PackedScene" uid="uid://c3h3lw1eyca4q" path="res://ui/controls/start_reset_button.tscn" id="4_start_reset"]
+[ext_resource type="PackedScene" uid="uid://bx5stjk0861qm" path="res://ui/controls/hint_button.tscn" id="5_hint_button"]
+[ext_resource type="PackedScene" uid="uid://cvswdng6ycbjr" path="res://ui/dialogs/hint_dialog.tscn" id="6_hint_dialog"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_game_ui")
+
+[node name="TopHUD" parent="." instance=ExtResource("2_top_hud")]
+layout_mode = 1
+
+[node name="BottomToolbar" parent="." instance=ExtResource("3_bottom_toolbar")]
+layout_mode = 1
+
+[node name="StartResetButton" parent="." instance=ExtResource("4_start_reset")]
+layout_mode = 1
+
+[node name="HintButton" parent="." instance=ExtResource("5_hint_button")]
+layout_mode = 1
+
+[node name="HintDialog" parent="." instance=ExtResource("6_hint_dialog")]

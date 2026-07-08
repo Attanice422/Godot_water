@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmbmtxd2bxg8i"]
+
+[ext_resource type="Script" path="res://ui/controls/delete_button.gd" id="1_delete_button"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_delete_hover"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(0.85098, 0.227451, 0.227451, 0.95)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_delete_normal"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(0.65098, 0.145098, 0.145098, 0.95)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="DeleteButton" type="Button"]
+custom_minimum_size = Vector2(48, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/hover = SubResource("StyleBoxFlat_delete_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_delete_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_delete_normal")
+text = "×"
+script = ExtResource("1_delete_button")
